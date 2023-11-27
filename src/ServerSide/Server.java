@@ -1,4 +1,4 @@
-package Server;
+package ServerSide;
 
 class Server{
     
