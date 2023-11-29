@@ -1,6 +1,7 @@
 package ClientSide;
 
 import java.net.InetAddress;
+import java.net.InetSocketAddress;
 import java.net.Socket;
 
 class Client{
@@ -12,7 +13,9 @@ class Client{
     Client(InetAddress IP, Integer portNumber) throws Exception{
        this.IP = IP;
         this.portNumber = portNumber;
-        this.clienSocket = new Socket(this.IP,this.portNumber);
+        this.clienSocket = new Socket();
+        this.clienSocket.connect(new InetSocketAddress(this.IP, this.portNumber), 1000);
+        
     }
 
     public InetAddress getIP() {
